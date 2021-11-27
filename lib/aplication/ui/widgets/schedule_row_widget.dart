@@ -4,21 +4,20 @@ import 'package:flutter_fest/aplication/ui/widgets/schedule_row_session_widget.d
 abstract class ScheduleRowWidget extends StatelessWidget {
   const ScheduleRowWidget({Key? key}) : super(key: key);
 
-  factory ScheduleRowWidget.single({Key? key}) => _ScheduleRowSingleSessionWidget(key: key);
+  factory ScheduleRowWidget.single({Key? key}) =>
+      _ScheduleRowSingleSessionWidget(key: key);
 
-  factory ScheduleRowWidget.multi({Key? key}) => _ScheduleRowMultiSessionWidget(key: key);
+  factory ScheduleRowWidget.multi({Key? key}) =>
+      _ScheduleRowMultiSessionWidget(key: key);
 }
 
-
- class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
+class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
   const _ScheduleRowSingleSessionWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
-          ScheduleRowSessionWidget()
-      ],
+      children: const [Expanded(child: ScheduleRowSessionWidget())],
     );
   }
 }
